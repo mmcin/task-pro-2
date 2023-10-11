@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-import os 
+import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -31,7 +31,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-gavpri-taskpro-iwtvs1krh0z.ws-eu105.gitpod.io', 'https://task-pro-1fa2a517fe32.herokuapp.com/']
+ALLOWED_HOSTS = [
+    '8000-gavpri-taskpro-iwtvs1krh0z.ws-eu105.gitpod.io',
+    'https://task-pro-1fa2a517fe32.herokuapp.com']
 
 
 # Application definition
@@ -90,7 +92,7 @@ WSGI_APPLICATION = 'task_pro.wsgi.application'
 # }
 
 DATABASES = {
-    'default' : dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 

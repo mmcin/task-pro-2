@@ -1,1 +1,1 @@
-web: gunicorn task-pro.wsgi
+web: gunicorn task_pro.wsgi
