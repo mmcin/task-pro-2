@@ -67,3 +67,12 @@ body {
     border: 1px solid var(--border-color);
     color: var(--primary-text-color);
 }
+
+/* button icon */
+.theme-toggle {
+    transition: all 0.3 ease-in-out;
+}
+
+.theme-toggle.rotate-icon {
+    transform: rotate(360deg);
+}
