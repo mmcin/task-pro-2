@@ -66,7 +66,7 @@ body {
     color: var(--accent-color-1);
 }
 
-/* Hamburger Menu */
+/* --- Hamburger Menu --- */
 .hamburger-span {
     display: block;
     width: 20px;
@@ -99,14 +99,14 @@ body {
     box-shadow: none;
 }
 
-/* button */
+/* --- Theme change button --- */
 #theme-tooltip {
     background: var(--background-color);
     border: 1px solid var(--border-color);
     color: var(--primary-text-color);
 }
 
-/* button icon */
+/* --- Button icon --- */
 .theme-toggle {
     transition: all 0.3s ease-in-out;
 }

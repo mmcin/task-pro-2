@@ -36,12 +36,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign In</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
+                    {% endif %}
                 </ul>
                 <button type="button" class="btn btn-secondary" id="theme-tooltip" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" data-bs-title="Change Theme">
