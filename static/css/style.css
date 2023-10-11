@@ -39,6 +39,10 @@ body {
 
 /* ----- Navigation Styling ----- */
 
+.navbar {
+    margin: 0 2rem;
+}
+
 .navbar-brand {
     font-family: var(--ff-title);
 }
