@@ -1,3 +1,31 @@
-body {
-    background-color: red;
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+:root {
+    /* Color Pallete */
+    --primary-text-color-day: #004080;
+    --secondary-text-color-day: #1a1a1a;
+    --accent-color-1-day: #0066cc;
+    --accent-color-2-day: #008080;
+    --background-color-day: #f5f5f5;
+    --border-color-day: #dcdcdc;
+    --link-color-day: #0066cc;
+
+    /* Fonts */
+    --ff-title: 'Oswald', sans-serif;
+    --ff-body: 'Roboto', sans-serif;
+}
+
+.darkmode {
+    /* Dark mode color pallete */
+    --primary-text-color-night: #ffffff;
+    --secondary-text-color-night: #cccccc;
+    --accent-color-1-night: #3399ff;
+    --accent-color-2-night: #66ffcc;
+    --background-color-night: #2a2a2a;
+    --border-color-night: #444444;
+    --link-color-night: #66ffcc;
 }

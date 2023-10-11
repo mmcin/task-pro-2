@@ -5,7 +5,7 @@ from .models import Task
 
 
 class TaskListView(generic.ListView):
-    model = Post
+    model = Task
     template_name = 'index.html'
     # Display fields
 
