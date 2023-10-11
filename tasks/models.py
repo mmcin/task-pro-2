@@ -15,5 +15,8 @@ class Task(models.Model):
     urgent = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['-created_at']
+
     def __str__(self):
         return self.title
