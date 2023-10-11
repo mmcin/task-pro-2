@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     # Model representing tasks in the to-do list app.
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_lenght=255)
+    title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField(blank=True, null=True)
