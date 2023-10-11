@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-gavpri-taskpro-iwtvs1krh0z.ws-eu105.gitpod.io',
-    'https://task-pro-1fa2a517fe32.herokuapp.com']
+    'task-pro-1fa2a517fe32.herokuapp.com']
 
 
 # Application definition
