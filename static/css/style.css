@@ -70,7 +70,7 @@ body {
 
 /* button icon */
 .theme-toggle {
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .theme-toggle.rotate-icon {
