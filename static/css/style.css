@@ -66,6 +66,39 @@ body {
     color: var(--accent-color-1);
 }
 
+/* Hamburger Menu */
+.hamburger-span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: var(--primary-text-color);
+    margin-bottom: 5px;
+}
+
+.hamburger-span:nth-child(1) {
+    width: 30px;
+}
+
+.hamburger-span:nth-child(2) {
+    width: 25px;
+}
+
+.hamburger-span:nth-child(3) {
+    width: 20px;
+}
+
+.navbar-toggler {
+    border: none;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 /* button */
 #theme-tooltip {
     background: var(--background-color);
