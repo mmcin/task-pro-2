@@ -42,3 +42,7 @@ body {
 .navbar-brand {
     font-family: var(--ff-title);
 }
+
+.navbar-collapse {
+    flex-grow: 0;
+}
