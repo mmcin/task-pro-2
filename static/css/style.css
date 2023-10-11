@@ -6,13 +6,13 @@
 
 :root {
     /* Color Pallete */
-    --primary-text-color-day: #004080;
-    --secondary-text-color-day: #1a1a1a;
-    --accent-color-1-day: #0066cc;
-    --accent-color-2-day: #008080;
-    --background-color-day: #f5f5f5;
-    --border-color-day: #dcdcdc;
-    --link-color-day: #0066cc;
+    --primary-text-color: #004080;
+    --secondary-text-color: #1a1a1a;
+    --accent-color-1: #0066cc;
+    --accent-color-2: #008080;
+    --background-color: #f5f5f5;
+    --border-color: #dcdcdc;
+    --link-color: #0066cc;
 
     /* Fonts */
     --ff-title: 'Oswald', sans-serif;
@@ -21,11 +21,24 @@
 
 .darkmode {
     /* Dark mode color pallete */
-    --primary-text-color-night: #ffffff;
-    --secondary-text-color-night: #cccccc;
-    --accent-color-1-night: #3399ff;
-    --accent-color-2-night: #66ffcc;
-    --background-color-night: #2a2a2a;
-    --border-color-night: #444444;
-    --link-color-night: #66ffcc;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #cccccc;
+    --accent-color-1: #3399ff;
+    --accent-color-2: #66ffcc;
+    --background-color: #2a2a2a;
+    --border-color: #444444;
+    --link-color: #66ffcc;
+}
+
+/* ----- General Styling ----- */
+
+body {
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+/* ----- Navigation Styling ----- */
+
+.navbar-brand {
+    font-family: var(--ff-title);
 }
