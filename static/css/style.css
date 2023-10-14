@@ -195,7 +195,7 @@ main {
 
 /* Tabbed Interface */
 .tabbed-interface {
-    width: 80vh;
+    width: 80vw;
     min-height: 50vh;
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
@@ -208,6 +208,33 @@ main {
     justify-content: space-between;
     margin: 2rem 1rem;
     position: relative;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.category-heading {
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.content h5,
+h6 {
+    font-family: var(--ff-title);
+    color: var(--primary-text-color);
+}
+
+.content h6 {
+    margin-top: 1rem;
+}
+
+.content p {
+    font-family: var(--ff-body);
+    color: var(--secondary-text-color);
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--secondary-text-color);
+    margin-bottom: 1rem;
 }
 
 .task-categories {
