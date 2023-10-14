@@ -22,7 +22,28 @@
 </div>
 <!-- Tabbed -->
 <section class="tabbed-interface">
-    <button class="add-task">Add A New Task <i class="fa-solid fa-circle-plus"></i></button>
+    <!-- Add Task Button -->
+    <button type="button" class="add-task" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add A
+        New Task <i class="fa-solid fa-circle-plus"></i></button>
+    <!-- Add Task Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Add Task Modal -->
     <div class="categorgy-headers">
         <h4 class="task-categories">All</h4>
         <h4 class="task-categories">Urgent</h4>
