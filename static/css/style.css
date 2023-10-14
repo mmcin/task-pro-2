@@ -315,3 +315,62 @@ h6 {
         margin-bottom: 1rem;
     }
 }
+
+/* ----- Create Task Form ----- */
+
+form {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+label {
+    display: none;
+}
+
+.urgent-label {
+    display: inline !important;
+}
+
+.form-control {
+    border: 1px solid var(--border-color);
+    margin-bottom: 2.5rem;
+    color: var(--secondary-text-color);
+}
+
+label {
+    display: none;
+}
+
+.urgent-label {
+    display: inline !important;
+    color: var(--secondary-text-color);
+    font-family: var(--ff-body);
+}
+
+.form-check-input {
+    height: 25px;
+    width: 25px;
+    margin-right: 1rem;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: var(--accent-color-1);
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+}
+
+.form-header-container h1 {
+    font-family: var(--ff-title);
+    color: var(--primary-text-color);
+}
