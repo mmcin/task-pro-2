@@ -192,6 +192,8 @@ main {
     height: 80%;
 }
 
+
+/* Tabbed Interface */
 .tabbed-interface {
     width: 80vh;
     min-height: 50vh;
@@ -210,6 +212,14 @@ main {
 .task-categories {
     font-family: var(--ff-title);
     color: var(--primary-text-color);
+}
+
+.task-categories.active-content {
+    color: var(--accent-color-1);
+}
+
+.task-content-box {
+    display: none;
 }
 
 /* Media Queries */
