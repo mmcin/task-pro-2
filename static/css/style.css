@@ -114,3 +114,32 @@ body {
 .theme-toggle.rotate-icon {
     transform: rotate(360deg);
 }
+
+/* ----- Hero Text Container ----- */
+
+.hero-content {
+    width: 80vw;
+    height: 75vh;
+    margin: 0 auto;
+}
+
+.hero-text-header h1 {
+    font-family: var(--ff-title);
+    color: var(--primary-text-color);
+}
+
+.hero-text-description {
+    font-family: var(--ff-body);
+    color: var(--secondary-text-color);
+    text-transform: capitalize;
+}
+
+.hero-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color-1);
+    border: 1px solid var(--border-color);
+    color: var(--secondary-text-color);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: var(--ff-body);
+}
