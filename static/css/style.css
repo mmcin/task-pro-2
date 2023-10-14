@@ -190,3 +190,40 @@ main {
     flex-direction: column;
     height: 80%;
 }
+
+/* Media Queries For Hero Section */
+
+@media screen and (max-width: 1062px) {
+    .hero-content {
+        flex-direction: column-reverse;
+    }
+
+    .hero-svg-wrapper {
+        width: 40%;
+    }
+
+    .hero-svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .hero-content {
+        height: 70vh;
+    }
+
+    .hero-text-container {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-text-description {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1062px) {
+    .hero-button:nth-child(2) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
