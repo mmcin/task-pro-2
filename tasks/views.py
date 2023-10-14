@@ -13,5 +13,3 @@ class TaskListView(generic.ListView):
         return Task.objects.filter(user=self.request.user).values(
             'title', 'description', 'due_date', 'urgent', 'completed'
         )
-
-
