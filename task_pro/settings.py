@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-gavpri-taskpro2-uvuis3cem4i.ws-eu105.gitpod.io',
+    '8000-gavpri-taskpro2-1smv1tfmw30.ws-eu105.gitpod.io',
     'task-pro-1fa2a517fe32.herokuapp.com',
     'task-pro.herokuapp.com']
 
