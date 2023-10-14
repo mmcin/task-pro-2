@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 # Import generic and Task Model
 from django.views import generic
 from .models import Task
 from django.views import View
+from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy
+from .forms import TaskForm
 
 
 class TaskListView(generic.ListView):
@@ -38,3 +41,8 @@ class AddTaskView(View):
         task.save()
 
         return redirect('home')
+
+
+# Edit a task
+def edit_task(request, task_id):
+    return render(request, 'task_form.html')

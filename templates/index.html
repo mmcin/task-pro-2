@@ -47,9 +47,17 @@
                 <h5>All Tasks</h5>
             </div>
             {% for task in object_list %}
-            <h6>
-                {{ task.title}}
-            </h6>
+            <div class="task-title">
+                <div class="task-title-text">
+                    <h6>
+                        {{ task.title}}
+                    </h6>
+                </div>
+                <div class="task-title-icon">
+                    <a href="/edit/task_id">Edit Task</a>
+                </div>
+            </div>
+
             <p>{{ task.description }}</p>
             {% endfor %}
         </div>

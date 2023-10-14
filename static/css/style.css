@@ -279,6 +279,15 @@ h6 {
     text-transform: uppercase;
 }
 
+.task-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-title-icon i {
+    color: var(--primary-text-color);
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1062px) {
@@ -323,7 +332,7 @@ form {
     border: 1px solid var(--border-color);
     border-radius: 20px;
     height: 50vh;
-    width: 50vw;
+    width: 85%;
     display: flex;
     align-items: stretch;
     flex-direction: column;
