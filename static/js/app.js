@@ -54,7 +54,7 @@ themeChangeButton.addEventListener("click", () => {
 // ----- Tabbed InterFace -----
 
 const tabs = document.querySelectorAll(".task-categories");
-const all_content = document.querySelectorAll(".content");
+const all_content = document.querySelectorAll(".task-content-box");
 
 tabs.forEach((tab, index) => {
   tab.addEventListener("click", (e) => {
@@ -66,5 +66,10 @@ tabs.forEach((tab, index) => {
     const line = document.querySelector(".line");
     line.style.width = e.target.offsetWidth + "px";
     line.style.left = e.target.offsetLeft + "px";
+
+    all_content.forEach((content) => {
+      content.classList.remove("active");
+    });
+    all_content[index].classList.add("active");
   });
 });

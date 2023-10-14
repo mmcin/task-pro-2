@@ -220,7 +220,17 @@ main {
 }
 
 .task-content-box {
-    display: none;
+    max-height: 0;
+    transform: translateX(-30px);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+}
+
+.task-content-box.active {
+    max-height: fit-content;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .line {

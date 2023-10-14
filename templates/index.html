@@ -31,9 +31,12 @@
     <div class="task-content-box">
         <div class="content">
             <h5>All Tasks</h5>
-            <p>
-                Task description
-            </p>
+            {% for task in object_list %}
+            <h6>
+                {{ task.title}}
+            </h6>
+            <p>{{ task.description }}</p>
+            {% endfor %}
         </div>
     </div>
     <div class="task-content-box">
