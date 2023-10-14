@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Hero Section non authenticated users -->
 <div class="hero-content">
     <div class="hero-text-container">
         <div class="hero-text-header">
@@ -19,4 +20,36 @@
         </div>
     </div>
 </div>
+<!-- Tabbed -->
+<section class="tabbed-interface">
+    <div class="categorgy-headers">
+        <h4 class="task-categories">All</h4>
+        <h4 class="task-categories">Urgent</h4>
+        <h4 class="task-categories">Completed</h4>
+    </div>
+    <div class="task-content-box">
+        <div class="content">
+            <h5>All Tasks</h5>
+            <p>
+                Task description
+            </p>
+        </div>
+    </div>
+    <div class="task-content-box">
+        <div class="content">
+            <h5>Urgent Tasks</h5>
+            <p>
+                Task description
+            </p>
+        </div>
+    </div>
+    <div class="task-content-box">
+        <div class="content">
+            <h5>Completed Tasks</h5>
+            <p>
+                Task description
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock content %}

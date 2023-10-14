@@ -39,9 +39,10 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    min-height: 80vh;
     width: 100vw;
 }
 
@@ -127,7 +128,7 @@ main {
 
 .hero-content {
     width: 80vw;
-    height: 50vh;
+    height: 93vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
@@ -191,7 +192,27 @@ main {
     height: 80%;
 }
 
-/* Media Queries For Hero Section */
+.tabbed-interface {
+    width: 80vh;
+    min-height: 50vh;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.categorgy-headers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 1rem;
+}
+
+.task-categories {
+    font-family: var(--ff-title);
+    color: var(--primary-text-color);
+}
+
+/* Media Queries */
 
 @media screen and (max-width: 1062px) {
     .hero-content {
