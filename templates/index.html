@@ -30,26 +30,33 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create A New Task</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- Add Task Form  -->
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Task Title</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="name@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="task_title" class="form-label">Task Title</label>
+                            <input type="text" class="form-control" id="task_title" placeholder="Task Title"
+                                name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="task_description" class="form-label">Task Description</label>
+                            <textarea class="form-control" id="task_description" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="urgent" id="task_urgent">
+                            <label class="form-check-label" for="task_urgent">
+                                Is this task urgent?
+                            </label>
+                        </div>
+                    </form>
                     <!-- End Of Add Task Form -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
