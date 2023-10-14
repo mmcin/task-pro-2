@@ -207,6 +207,7 @@ main {
     align-items: center;
     justify-content: space-between;
     margin: 2rem 1rem;
+    position: relative;
 }
 
 .task-categories {
@@ -220,6 +221,16 @@ main {
 
 .task-content-box {
     display: none;
+}
+
+.line {
+    position: absolute;
+    width: 90px;
+    height: 5px;
+    top: 45px;
+    left: 0;
+    background-color: var(--accent-color-1);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Media Queries */

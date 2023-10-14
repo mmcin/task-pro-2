@@ -57,10 +57,14 @@ const tabs = document.querySelectorAll(".task-categories");
 const all_content = document.querySelectorAll(".content");
 
 tabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
+  tab.addEventListener("click", (e) => {
     tabs.forEach((tab) => {
       tab.classList.remove("active-content");
     });
     tab.classList.add("active-content");
+
+    const line = document.querySelector(".line");
+    line.style.width = e.target.offsetWidth + "px";
+    line.style.left = e.target.offsetLeft + "px";
   });
 });
