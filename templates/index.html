@@ -23,45 +23,15 @@
 <!-- Tabbed -->
 <section class="tabbed-interface">
     <!-- Add Task Button -->
-    <button type="button" class="add-task" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add A
+    <button type="button" class="add-task">Add A
         New Task <i class="fa-solid fa-circle-plus"></i></button>
-    <!-- Add Task Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create A New Task</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Add Task Form  -->
-                    <form method="post" action="">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="task_title" class="form-label">Task Title</label>
-                            <input type="text" class="form-control" id="task_title" placeholder="Task Title"
-                                name="title">
-                        </div>
-                        <div class="mb-3">
-                            <label for="task_description" class="form-label">Task Description</label>
-                            <textarea class="form-control" id="task_description" name="description" rows="3"></textarea>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="urgent" id="task_urgent">
-                            <label class="form-check-label" for="task_urgent">
-                                Is this task urgent?
-                            </label>
-                        </div>
-                    </form>
-                    <!-- End Of Add Task Form -->
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- End Of Add Task Modal -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </div>
+    </div>
     <div class="categorgy-headers">
         <h4 class="task-categories">All</h4>
         <h4 class="task-categories">Urgent</h4>
