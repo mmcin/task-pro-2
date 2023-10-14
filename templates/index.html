@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="hero-content">
@@ -13,7 +14,9 @@
         </div>
     </div>
     <div class="hero-svg-wrapper">
-        <div class="hero-svg"></div>
+        <div class="hero-svg">
+            <img src="{% static 'svg/task-pro-hero.svg' %}" alt="">
+        </div>
     </div>
 </div>
 {% endblock content %}
