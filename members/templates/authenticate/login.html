@@ -8,16 +8,14 @@
 <form method="post">
     {% csrf_token %}
     <div class="mb-3">
-        <label for="id_username" class="form-label">Task Description</label>
-        <input type=text class="form-control" id="id_username" name="username" placeholder="Task Description"
-            rows="3"></input>
+        <label for="id_username" class="form-label">Username</label>
+        <input type=text class="form-control" id="id_username" name="username" placeholder="Username" rows="3"></input>
     </div>
     <div class="mb-3">
-        <label for="id_password1" class="form-label">Task Description</label>
-        <input type=text class="form-control" id="id_password1" name="password1" placeholder="Enter Your Password"
-            rows="3"></input>
-    </div>
-    <button type="submit" class="btn btn-primary">Update Task</button>
+        <label for="id_password" class="form-label">Task Description</label>
+        <input type=password class="form-control" id="id_password" name="password"
+            placeholder="Enter Your Password"><input </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
 </form>
 
 {% endblock content %}
