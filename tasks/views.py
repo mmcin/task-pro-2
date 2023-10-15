@@ -45,7 +45,7 @@ class AddTaskView(View):
             )
         task.save()
 
-        return redirect('home')
+        return redirect('view_tasks')
 
 # Update Item
 
@@ -75,7 +75,7 @@ class EditTaskView(View):
         task.completed = request.POST.get('completed', False) == 'on'
         task.save()
 
-        return redirect('home')
+        return redirect('view_tasks')
 
 
 class DeleteTaskView(View):
@@ -99,4 +99,4 @@ class DeleteTaskView(View):
         # Delete the task
         task.delete()
 
-        return redirect('home')
+        return redirect('view_tasks')
