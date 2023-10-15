@@ -2,9 +2,16 @@
 {% load static }
 
 {% block content %}
+<style>
+    .errorlist {
+        color: var(--secondary-text-color);
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+</style>
 
 {% if form.errors %}
-<div class="alert alert-success alert-success fade show" role="alert">
+<div class="alert alert-danger fade show" role="alert">
     <p> There was error in your sign up, please try again!</p>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
