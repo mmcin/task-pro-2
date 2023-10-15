@@ -7,7 +7,6 @@ from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
 
 
-
 class TaskListView(generic.ListView):
     model = Task
     template_name = 'index.html'
@@ -68,5 +67,29 @@ class EditTaskView(View):
         task.description = request.POST.get('description')
         task.urgent = request.POST.get('urgent', False) == 'on'
         task.save()
+
+        return redirect('home')
+
+
+class DeleteTaskView(View):
+    template_name = 'delete_task.html'
+
+    def get(self, request, task_id, *args, **kwargs):
+        # Retrieve the task from the database using the task_id
+        task = get_object_or_404(Task, id=task_id)
+
+        # Pass the task details to the template for confirmation
+        context = {
+            'task': task,
+        }
+
+        return render(request, self.template_name, context)
+
+    def post(self, request, task_id, *args, **kwargs):
+        # Retrieve the task from the database using the task_id
+        task = get_object_or_404(Task, id=task_id)
+
+        # Delete the task
+        task.delete()
 
         return redirect('home')
