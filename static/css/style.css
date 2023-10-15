@@ -47,9 +47,14 @@ main {
 }
 
 /* ----- Navigation Styling ----- */
+.nav {
+    background-color: var(--background-color);
+}
 
 .navbar {
     margin: 0 2rem;
+    background-color: var(--background-color);
+    margin-bottom: 2rem
 }
 
 .navbar-brand {
