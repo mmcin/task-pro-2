@@ -7,9 +7,13 @@ from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
 
 
+def home(request):
+    return render(request, 'index.html')
+
+
 class TaskListView(generic.ListView):
     model = Task
-    template_name = 'index.html'
+    template_name = 'task_view.html'
     # Display fields
 
     def get_queryset(self):
