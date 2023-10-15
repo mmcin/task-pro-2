@@ -11,12 +11,12 @@
         </button>
     </a>
     <div class="categorgy-headers">
-        <h4 class="task-categories">All</h4>
+        <h4 class="task-categories active-content">All</h4>
         <h4 class="task-categories">Urgent</h4>
         <h4 class="task-categories">Completed</h4>
         <div class="line"></div>
     </div>
-    <div class="task-content-box">
+    <div class="task-content-box active">
         <div class="content">
             <div class="category-heading">
                 <h5>All Tasks</h5>
@@ -25,7 +25,7 @@
             <div class="task-title">
                 <div class="task-title-text">
                     <h6>
-                        {{ task.id }}{{ task.title}}
+                        {{ task.title}}
                     </h6>
                 </div>
                 <div class="task-title-icon">
@@ -50,7 +50,7 @@
             <div class="task-title">
                 <div class="task-title-text">
                     <h6>
-                        {{ task.id }}{{ task.title}}
+                        {{ task.title}}
                     </h6>
                 </div>
                 <div class="task-title-icon">
@@ -79,7 +79,7 @@
             <div class="task-title">
                 <div class="task-title-text">
                     <h6>
-                        <s>{{ task.id }}{{ task.title }}</s>
+                        <s>{{ task.title }}</s>
                     </h6>
                 </div>
                 <div class="task-title-icon">
