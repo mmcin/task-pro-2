@@ -5,4 +5,4 @@ from django.contrib import messages
 
 
 def login_user(request):
-    return render(request, 'authenticate/login.html', {}),
+    return render(request, 'authenticate/login.html', {})
