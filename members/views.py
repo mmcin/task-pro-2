@@ -54,6 +54,6 @@ def register_user(request):
             messages.success(
                 request, ('You have successfully signed up to Task Pro'))
             return redirect('task_view')
-        else:
-            form = UserCreationForm()
+    else:
+        form = UserCreationForm()
     return render(request, 'authenticate/register_user.html', {'form': form})
