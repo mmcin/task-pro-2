@@ -9,15 +9,17 @@
     {% csrf_token %}
     <div class="mb-3">
         <label for="task_title" class="form-label">Task Title</label>
-        <input type="text" required class="form-control" id="task_title" placeholder="Task Title" name="title">
+        <input type="text" value="{{task.title}}" required class="form-control" id="task_title" placeholder="Task Title"
+            name="title">
     </div>
     <div class="mb-3">
         <label for="task_description" class="form-label">Task Description</label>
         <textarea class="form-control" id="task_description" name="description" placeholder="Task Description"
-            rows="3"></textarea>
+            rows="3">{{task.description}}</textarea>
     </div>
     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="task_urgent" name="urgent" value="on">
+        <input type="checkbox" class="form-check-input" {% if task.urgent %} checked {% endif %} id="task_urgent"
+            name="urgent" value="on">
         <label class="form-check-label urgent-label" for="task_urgent" class="">Is this task urgent?</label>
     </div>
     <button type="submit" class="btn btn-primary">Update Task</button>

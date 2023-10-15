@@ -28,13 +28,6 @@
             New Task <i class="fa-solid fa-circle-plus"></i>
         </button>
     </a>
-    </div>
-    <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-    </div>
-    </div>
-    </div>
     <div class="categorgy-headers">
         <h4 class="task-categories">All</h4>
         <h4 class="task-categories">Urgent</h4>
@@ -50,11 +43,11 @@
             <div class="task-title">
                 <div class="task-title-text">
                     <h6>
-                        {{ task.title}}
+                        {{ task.id }}{{ task.title}}
                     </h6>
                 </div>
                 <div class="task-title-icon">
-                    <a href="/edit/task_id">Edit Task</a>
+                    <a href="/edit/{{ task.id }}">Update Task</a>
                 </div>
             </div>
 

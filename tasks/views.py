@@ -5,7 +5,7 @@ from .models import Task
 from django.views import View
 from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
-from .forms import TaskForm
+
 
 
 class TaskListView(generic.ListView):
@@ -15,7 +15,7 @@ class TaskListView(generic.ListView):
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user).values(
-            'title', 'description', 'due_date', 'urgent', 'completed'
+            'id', 'title', 'description', 'due_date', 'urgent', 'completed'
         )
 
 
@@ -42,7 +42,31 @@ class AddTaskView(View):
 
         return redirect('home')
 
+# Update Item
 
-# Edit a task
-def edit_task(request, task_id):
-    return render(request, 'task_form.html')
+
+class EditTaskView(View):
+    template_name = 'task_form.html'
+
+    def get(self, request, task_id, *args, **kwargs):
+        # Retrieve the task from the database using the task_id
+        task = get_object_or_404(Task, id=task_id)
+
+        # Pass the task details to the template for rendering the form
+        context = {
+            'task': task,
+        }
+
+        return render(request, self.template_name, context)
+
+    def post(self, request, task_id, *args, **kwargs):
+        # Retrieve the task from the database using the task_id
+        task = get_object_or_404(Task, id=task_id)
+
+        # Process the form submission here
+        task.title = request.POST.get('title')
+        task.description = request.POST.get('description')
+        task.urgent = request.POST.get('urgent', False) == 'on'
+        task.save()
+
+        return redirect('home')
