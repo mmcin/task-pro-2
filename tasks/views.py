@@ -68,7 +68,7 @@ class EditTaskView(View):
         task.title = request.POST.get('title')
         task.description = request.POST.get('description')
         task.urgent = request.POST.get('urgent', False) == 'on'
-        completed = request.POST.get('completed', False) == 'on'
+        task.completed = request.POST.get('completed', False) == 'on'
         task.save()
 
         return redirect('home')

@@ -88,11 +88,33 @@
     </div>
     <div class="task-content-box">
         <div class="content">
-            <h5>Completed Tasks</h5>
-            <p>
-                Task description
-            </p>
+            <div class="category-heading">
+                <h5>Completed Tasks</h5>
+            </div>
+
+            {% for task in object_list %}
+            {% if task.completed %}
+            <div class="task-title">
+                <div class="task-title-text">
+                    <h6>
+                        <s>{{ task.id }}{{ task.title }}</s>
+                    </h6>
+                </div>
+                <div class="task-title-icon">
+                    <a href="/edit/{{ task.id }}">Update Task</a>
+                </div>
+                <div class="task-title-icon">
+                    <a href="/delete/{{ task.id }}">Delete Task</a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% if object_list|length == 0 %}
+            <p>You have no completed tasks!</p>
+            {% endif %}
         </div>
     </div>
+
 </section>
 {% endblock content %}
