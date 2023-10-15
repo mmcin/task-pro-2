@@ -288,6 +288,12 @@ h6 {
     color: var(--primary-text-color);
 }
 
+/* ul on user creation */
+
+#text {
+    color: var(--secondary-text-color);
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1062px) {
