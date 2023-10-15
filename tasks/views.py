@@ -29,13 +29,15 @@ class AddTaskView(View):
         title = request.POST.get('title')
         description = request.POST.get('description')
         urgent = request.POST.get('urgent', False) == 'on'
+        completed = request.POST.get('completed', False) == 'on'
 
         # Create a new Task object
         task = Task(
             user=request.user,
             title=title,
             description=description,
-            urgent=urgent
+            urgent=urgent,
+            completed=completed
             )
         task.save()
 
@@ -66,6 +68,7 @@ class EditTaskView(View):
         task.title = request.POST.get('title')
         task.description = request.POST.get('description')
         task.urgent = request.POST.get('urgent', False) == 'on'
+        completed = request.POST.get('completed', False) == 'on'
         task.save()
 
         return redirect('home')

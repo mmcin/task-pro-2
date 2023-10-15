@@ -22,6 +22,11 @@
             name="urgent" value="on">
         <label class="form-check-label urgent-label" for="task_urgent" class="">Is this task urgent?</label>
     </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" {% if task.complete %} checked {% endif %} id="task_completed"
+            name="completed" value="on">
+        <label class="form-check-label urgent-label" for="task_completed" class="">Is this task completed?</label>
+    </div>
     <button type="submit" class="btn btn-primary">Update Task</button>
 </form>
 

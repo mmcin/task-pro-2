@@ -60,10 +60,30 @@
     </div>
     <div class="task-content-box">
         <div class="content">
-            <h5>Urgent Tasks</h5>
-            <p>
-                Task description
-            </p>
+            <div class="category-heading">
+                <h5>Urgent Tasks</h5>
+            </div>
+            {% for task in object_list %}
+            {% if task.urgent %}
+            <div class="task-title">
+                <div class="task-title-text">
+                    <h6>
+                        {{ task.id }}{{ task.title}}
+                    </h6>
+                </div>
+                <div class="task-title-icon">
+                    <a href="/edit/{{ task.id }}">Update Task</a>
+                </div>
+                <div class="task-title-icon">
+                    <a href="/delete/{{ task.id }}">Delete Task</a>
+                </div>
+            </div>
+            {% else %}
+
+            {%endif%}
+            {%empty%}
+            <p>You have no urgent tasks!</p>
+            {% endfor %}
         </div>
     </div>
     <div class="task-content-box">
