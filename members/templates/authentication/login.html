@@ -8,23 +8,14 @@
 <form method="post">
     {% csrf_token %}
     <div class="mb-3">
-        <label for="task_title" class="form-label">Task Title</label>
-        <input type="text" value="{{task.title}}" required class="form-control" id="task_title" placeholder="Task Title"
-            name="title">
+        <label for="id_username" class="form-label">Task Description</label>
+        <input type=text class="form-control" id="id_username" name="username" placeholder="Task Description"
+            rows="3"></input>
     </div>
     <div class="mb-3">
-        <label for="id_username" class="form-label">Task Description</label>
-        <input class="form-control" id="id_username" name="username" placeholder="Task Description" rows="3"></input>
-    </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" {% if task.urgent %} checked {% endif %} id="task_urgent"
-            name="urgent" value="on">
-        <label class="form-check-label urgent-label" for="task_urgent" class="">Is this task urgent?</label>
-    </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" {% if task.complete %} checked {% endif %} id="task_completed"
-            name="completed" value="on">
-        <label class="form-check-label urgent-label" for="task_completed" class="">Is this task completed?</label>
+        <label for="id_password1" class="form-label">Task Description</label>
+        <input type=text class="form-control" id="id_password1" name="password1" placeholder="Enter Your Password"
+            rows="3"></input>
     </div>
     <button type="submit" class="btn btn-primary">Update Task</button>
 </form>
