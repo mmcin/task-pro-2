@@ -2,6 +2,13 @@
 {% load static }
 
 {% block content %}
+
+{% if form.errors %}
+<div class="alert alert-success alert-success fade show" role="alert">
+    <p> There was error in your sign up, please try again!</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
 <div class="form-header-container">
     <h1>Sign Up</h1>
 </div>
