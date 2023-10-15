@@ -24,7 +24,8 @@
             {% for task in object_list %}
             <div class="task-title">
                 <div class="task-title-text">
-                    <h6>
+                    <h6 {% if task.completed %}style="text-decoration: line-through;" {% endif %}>
+
                         {{ task.title}}
                     </h6>
                 </div>
@@ -49,7 +50,7 @@
             {% if task.urgent %}
             <div class="task-title">
                 <div class="task-title-text">
-                    <h6>
+                    <h6 {% if task.completed %}style="text-decoration: line-through;" {% endif %}>
                         {{ task.title}}
                     </h6>
                 </div>

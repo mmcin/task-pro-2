@@ -10,7 +10,9 @@
         </div>
         <div class="hero-text-description">
             <h3>Log and track your tasks</h3>
-            <button type="button" class="hero-button">Sign In</button>
+            <a href=" {% url 'login' %}">
+                <button type="button" class="hero-button">Sign In</button>
+            </a>
             <button type="button" class="hero-button">Sign Up</button>
         </div>
     </div>
@@ -20,101 +22,5 @@
         </div>
     </div>
 </div>
-<!-- Tabbed -->
-<!-- <section class="tabbed-interface">
-    Add Task Button -->
-<!-- <a href="/add">
-        <button type="button" class="add-task">Add A
-            New Task <i class="fa-solid fa-circle-plus"></i>
-        </button>
-    </a>
-    <div class="categorgy-headers">
-        <h4 class="task-categories">All</h4>
-        <h4 class="task-categories">Urgent</h4>
-        <h4 class="task-categories">Completed</h4>
-        <div class="line"></div>
-    </div>
-    <div class="task-content-box">
-        <div class="content">
-            <div class="category-heading">
-                <h5>All Tasks</h5>
-            </div>
-            {% for task in object_list %}
-            <div class="task-title">
-                <div class="task-title-text">
-                    <h6>
-                        {{ task.id }}{{ task.title}}
-                    </h6>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/edit/{{ task.id }}">Update Task</a>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/delete/{{ task.id }}">Delete Task</a>
-                </div>
-            </div>
-
-            <p>{{ task.description }}</p>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="task-content-box">
-        <div class="content">
-            <div class="category-heading">
-                <h5>Urgent Tasks</h5>
-            </div>
-            {% for task in object_list %}
-            {% if task.urgent %}
-            <div class="task-title">
-                <div class="task-title-text">
-                    <h6>
-                        {{ task.id }}{{ task.title}}
-                    </h6>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/edit/{{ task.id }}">Update Task</a>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/delete/{{ task.id }}">Delete Task</a>
-                </div>
-            </div>
-            {% else %}
-
-            {%endif%}
-            {%empty%}
-            <p>You have no urgent tasks!</p>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="task-content-box">
-        <div class="content">
-            <div class="category-heading">
-                <h5>Completed Tasks</h5>
-            </div>
-
-            {% for task in object_list %}
-            {% if task.completed %}
-            <div class="task-title">
-                <div class="task-title-text">
-                    <h6>
-                        <s>{{ task.id }}{{ task.title }}</s>
-                    </h6>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/edit/{{ task.id }}">Update Task</a>
-                </div>
-                <div class="task-title-icon">
-                    <a href="/delete/{{ task.id }}">Delete Task</a>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-
-            {% if object_list|length == 0 %}
-            <p>You have no completed tasks!</p>
-            {% endif %}
-        </div>
-    </div> -->
-
 </section>
 {% endblock content %}
