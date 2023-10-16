@@ -405,3 +405,120 @@ The `urls.py` file defines the URL patterns for the Task Pro Django application.
 - The URLs are used to define the navigation structure of the Task Pro application.
 - They specify which views should be invoked for different user actions, such as viewing tasks, adding tasks, editing tasks, and deleting tasks.
 - These URL patterns are then included in the main `urls.py` file of the Django project to integrate them into the overall project structure.
+
+## Task View Testing
+
+## Task Pro Unit Tests
+
+This unit test file, `tests.py`, contains test cases for the Task Pro Django application. The tests are designed to verify the functionality of various views and user interactions within the application.
+
+### Test Cases:
+
+1. **Check Home Page Access:**
+   - The `test_get_home_page` method verifies that anyone can access the home page (`/`). It checks the HTTP status code and the template used.
+
+   ```python
+   def test_get_home_page(self):
+       response = self.client.get('/')
+       self.assertEqual(response.status_code, 200)
+       self.assertIn(
+           'index.html', [template.name for template in response.templates])
+    ```
+
+2. **Check Access to Add Task View:**
+   - The `test_view_access_to_add_when_logged_in` method ensures that logged-in users can access the 'view_tasks' page.
+
+   ```python
+   def test_view_access_to_add_when_logged_in(self):
+       url = reverse('view_tasks')
+       response = self.client.get(url)
+       self.assertEqual(response.status_code, 200)
+    ```
+
+3. **Check Task Creation:**
+   - The `test_create_task` method simulates a POST request to create a task and checks if the task is added to the database.
+
+   ```python
+   def test_create_task(self):
+       url = reverse('add_task')
+       response = self.client.post(url, {
+           'title': 'Test Task',
+           'description': 'This is a test task.',
+           'urgent': 'on',
+           'completed': 'on'
+       })
+       self.assertEqual(response.status_code, 302)
+       redirect_url = reverse('view_tasks')
+       self.assertEqual(response.url, redirect_url)
+       self.assertTrue(
+           Task.objects.filter(title='Test Task', user=self.user).exists())
+    ```
+
+4. **Check Access to Edit Task View:**
+   - The `test_view_access_to_edit_when_logged_in` method checks if logged-in users can access the 'edit' view.
+
+   ```python
+   def test_view_access_to_edit_when_logged_in(self):
+       self.task = Task.objects.create(user=self.user, title='Test Task')
+       url = reverse('edit', args=[int(self.task.id)])
+       response = self.client.get(url)
+       self.task.delete()
+       self.assertEqual(response.status_code, 200)
+    ```
+
+5. **Check Task Editing:**
+   - The `test_edit_task` method simulates a POST request to edit a task and checks if the task details are updated in the database.
+
+   ```python
+   def test_edit_task(self):
+       task = self.task
+       url = reverse('edit', args=[str(self.task.id)])
+       updated_title = 'Updated Test Task'
+       updated_description = 'Updated description'
+       response = self.client.post(url, {
+           'title': updated_title,
+           'description': updated_description,
+           'urgent': 'on',
+           'completed': 'on',
+       })
+       self.assertEqual(response.status_code, 302)
+       redirect_url = reverse('view_tasks')
+       self.assertEqual(response.url, redirect_url)
+       task.refresh_from_db()
+    ```
+
+6. **Check Access to Delete Task View:**
+   - The `test_view_access_to_delete_when_logged_in` method checks if logged-in users can access the 'delete' view.
+
+    ```python
+    def test_view_access_to_delete_when_logged_in(self):
+       self.task = Task.objects.create(user=self.user, title='Test Task')
+       url = reverse('delete', args=[int(self.task.id)])
+       response = self.client.get(url)
+       self.task.delete()
+       self.assertEqual(response.status_code, 200)
+    ```
+
+7. **Check Task Deletion:**
+   - The `test_delete_task` method simulates a POST request to delete a task and checks if the task is removed from the database.
+
+   ```python
+   def test_delete_task(self):
+       self.task = Task.objects.create(user=self.user, title='Test Task')
+       url = reverse('delete', args=[int(self.task.id)])
+       response = self.client.get(url)
+       self.assertEqual(response.status_code, 200)
+       self.assertIn('task', response.context)
+       response = self.client.post(url)
+       self.assertEqual(response.status_code, 302)
+       redirect_url = reverse('view_tasks')
+       self.assertEqual(response.url, redirect_url)
+       with self.assertRaises(Task.DoesNotExist):
+           self.task.refresh_from_db()
+    ```
+
+### Usage:
+
+- Run the tests using the standard Django test runner.
+- The tests cover various aspects of the Task Pro application, including view access, task creation, editing, and deletion.
+- Ensure that the test data is cleaned up after each test to maintain a consistent test environment.
