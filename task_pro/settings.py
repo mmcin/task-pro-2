@@ -31,6 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = [
     '8000-gavpri-taskpro2-1smv1tfmw30.ws-eu105.gitpod.io',
     'task-pro-1fa2a517fe32.herokuapp.com',
