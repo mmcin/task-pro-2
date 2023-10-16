@@ -39,6 +39,9 @@
 
             <p>{{ task.description }}</p>
             {% endfor %}
+            {% if object_list|length == 0 %}
+            <p>Add tasks by clicking the button above!</p>
+            {% endif %}
         </div>
     </div>
     <div class="task-content-box">
