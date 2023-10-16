@@ -517,8 +517,50 @@ This unit test file, `tests.py`, contains test cases for the Task Pro Django app
            self.task.refresh_from_db()
     ```
 
-### Usage:
+#### Usage:
 
 - Run the tests using the standard Django test runner.
 - The tests cover various aspects of the Task Pro application, including view access, task creation, editing, and deletion.
 - Ensure that the test data is cleaned up after each test to maintain a consistent test environment.
+
+### Test Task Model:
+
+This test case (`TestTaskModel`) is designed to ensure that the `Task` model in the Task Pro application behaves as expected, specifically focusing on the default values of the `urgent` and `completed` attributes.
+
+#### Test Method: `test_urgent_defaults_to_false`
+
+This method checks if the `urgent` attribute of a newly created `Task` defaults to `False`. The steps involved are as follows:
+
+1. **Create a User:**
+   - A test user (`user`) is created using `User.objects.create`.
+
+2. **Create a Task:**
+   - A new task (`task`) is created and associated with the test user, setting the title to 'Test model'.
+
+3. **Assertion: `self.assertFalse(task.urgent)`**
+   - This asserts that the `urgent` attribute of the task is `False`, ensuring it defaults to the expected value.
+
+4. **Assertion: `self.assertFalse(task.completed)`**
+   - Additionally, this asserts that the `completed` attribute of the task is also `False`, ensuring its default value.
+
+This test is crucial to guarantee that when a new task is created, the `urgent` and `completed` attributes start with the correct default values.
+
+```python
+from django.contrib.auth.models import User
+from django.test import TestCase
+from .models import Task
+import unittest
+
+class TestTaskModel(unittest.TestCase):
+    def test_urgent_defaults_to_false(self):
+        # Create a user
+        user = User.objects.create(username='Change Name 3')
+
+        # Create a task associated with the user
+        task = Task.objects.create(title='Test model', user=user)
+
+        # Assert that urgent is False
+        self.assertFalse(task.urgent)
+
+        # Assert that completed is False
+```
