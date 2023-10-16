@@ -564,3 +564,204 @@ class TestTaskModel(unittest.TestCase):
 
         # Assert that completed is False
 ```
+
+## Members Templates 
+
+# Sign In Page
+
+This Django template file (`login.html`) represents the sign-in page of the Task Pro application. It extends the `base.html` template and includes static files using `{% load static %}`.
+
+# Sign Up Page
+
+This Django template file (`sign_up.html`) serves as the sign-up page for the Task Pro application. It extends the `base.html` template and includes static files using `{% load static %}`.
+
+### Credits for this section
+
+Styling for the error list was found on this stack overflow link: https://stackoverflow.com/questions/29239837/style-django-form-error-message
+
+Styling for the input field was found on this Medium link: https://skolo-online.medium.com/python-django-user-registration-login-logout-custom-styling-c2f2901e162a
+
+## Members Views 
+
+### Login User View
+
+This Django view (`login_user`) handles user authentication for the Task Pro application. It allows users to log in by providing their username and password.
+
+### View Functionality:
+
+1. **HTTP Methods Handling:**
+   - The view handles both GET and POST requests.
+   - For a GET request, it renders the 'login.html' template, providing an empty context `{}`.
+
+2. **User Authentication:**
+   - For a POST request, it retrieves the entered username and password from the request.
+   - It then attempts to authenticate the user using Django's `authenticate` function.
+  
+3. **Successful Authentication:**
+   - If authentication is successful, the user is logged in using `login(request, user)`.
+   - The user is then redirected to the 'view_tasks' page, which likely displays the user's task list.
+
+4. **Failed Authentication:**
+   - If authentication fails, an error message is added to the Django messages framework.
+   - The user is redirected back to the 'login' page to retry.
+
+### Usage of Django Components:
+
+- **User Authentication:**
+  - Utilizes Django's `authenticate`, `login`, and `logout` functions for handling user authentication.
+  - Displays error messages using Django's `messages` framework.
+
+- **Form Handling:**
+  - Utilizes the 'login.html' template for rendering the login form.
+  - Handles form submission for user login.
+
+- **User Creation Form:**
+  - Utilizes the `UserCreationForm` from `django.contrib.auth.forms` for handling user registration.
+
+### Template Rendering:
+
+- The view renders the 'login.html' template, which is expected to contain the login form.
+
+### Redirects:
+- Successful login redirects the user to the 'view_tasks' page.
+- Failed login redirects the user back to the 'login' page with an error message.
+
+### Logout User View
+
+This Django view (`logout_user`) handles the process of logging out a user in the Task Pro application.
+
+#### View Functionality:
+
+1. **User Logout:**
+   - The view uses Django's `logout` function to log the current user out, ending their session.
+
+2. **Success Message:**
+   - After successful logout, a success message is added to the Django messages framework.
+   - The message informs the user that they were logged out.
+
+3. **Redirect:**
+   - After logging out, the user is redirected to the 'home' page.
+
+#### Usage of Django Components:
+
+- **User Logout:**
+  - Utilizes Django's `logout` function for handling user logout.
+  - Displays a success message using Django's `messages` framework.
+
+#### Redirects:
+- After successful logout, the user is redirected to the 'home' page.
+
+### Register User View
+
+This Django view (`register_user`) manages user registration within the Task Pro application.
+
+#### View Functionality:
+
+1. **Form Processing:**
+   - The view processes a registration form submitted via POST request.
+   - Utilizes Django's `RegisterUserForm` to validate and handle user registration data.
+
+2. **Validation and User Creation:**
+   - Checks if the submitted form is valid.
+   - If valid, the user account is created using `form.save()`.
+
+3. **User Authentication and Login:**
+   - After successful registration, the user is automatically authenticated and logged in.
+   - Uses Django's `authenticate` and `login` functions.
+
+4. **Success Message:**
+   - A success message is added to the Django messages framework, indicating a successful registration.
+
+5. **Redirect:**
+   - Upon successful registration and login, the user is redirected to the 'view_tasks' page.
+
+#### Usage of Django Components:
+
+- **Form Processing:**
+  - Utilizes Django's form handling, including form validation and saving.
+
+- **User Authentication:**
+  - Uses Django's `authenticate` and `login` functions for user authentication and login.
+
+- **Success Message:**
+  - Displays a success message using Django's `messages` framework.
+
+## Members Form - Register User
+
+This Django view (`register_user`) manages user registration within the Task Pro application.
+
+### View Functionality:
+
+1. **Form Processing:**
+   - The view processes a registration form submitted via POST request.
+   - Utilizes Django's `RegisterUserForm` to validate and handle user registration data.
+
+2. **Validation and User Creation:**
+   - Checks if the submitted form is valid.
+   - If valid, the user account is created using `form.save()`.
+
+3. **User Authentication and Login:**
+   - After successful registration, the user is automatically authenticated and logged in.
+   - Uses Django's `authenticate` and `login` functions.
+
+4. **Success Message:**
+   - A success message is added to the Django messages framework, indicating a successful registration.
+
+5. **Redirect:**
+   - Upon successful registration and login, the user is redirected to the 'view_tasks' page.
+
+### Usage of Django Components:
+
+- **Form Processing:**
+  - Utilizes Django's form handling, including form validation and saving.
+
+- **User Authentication:**
+  - Uses Django's `authenticate` and `login` functions for user authentication and login.
+
+- **Success Message:**
+  - Displays a success message using Django's `messages` framework.
+
+## Members URLS
+
+### Login, Logout, and User Registration
+
+This section defines the URL patterns for user authentication in the Task Pro application.
+
+### 1. Login User (`/login_user`)
+
+- **URL Pattern:** `/login_user`
+- **View Function:** `views.login_user`
+- **Name:** 'login'
+- **Description:**
+  - Handles user login.
+  - Allows users to log in by providing their username and password.
+  - On successful login, redirects to the 'view_tasks' page.
+  - If there's an error during login, users are redirected to the 'login' page with an error message.
+
+### 2. Logout User (`/logout_user`)
+
+- **URL Pattern:** `/logout_user`
+- **View Function:** `views.logout_user`
+- **Name:** 'logout'
+- **Description:**
+  - Handles user logout.
+  - Logs the user out and displays a success message.
+  - Redirects users to the 'home' page after successful logout.
+
+### 3. Register User (`/register_user`)
+
+- **URL Pattern:** `/register_user`
+- **View Function:** `views.register_user`
+- **Name:** 'register_user'
+- **Description:**
+  - Handles user registration.
+  - Displays a registration form allowing users to sign up with a username and password.
+  - On successful registration, users are redirected to the 'view_tasks' page.
+
+### Credits for this code
+
+The code for the login feature was found on the Django Wednesday playlist on youtube.
+The playlist can be found here: https://www.youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy
+
+Videos :
+    - 21 to 26 were used. 
