@@ -366,3 +366,42 @@ class DeleteTaskView(View):
 
         return redirect('view_tasks')
 ```
+
+## Task URLS
+
+## Task Pro URL Configuration
+
+The `urls.py` file defines the URL patterns for the Task Pro Django application. It maps different URLs to corresponding views, allowing users to navigate and interact with various functionalities of the application.
+
+### URL Patterns:
+
+1. **Home Page:**
+   - URL: `/`
+   - View: `home`
+   - Name: `'home'`
+
+2. **View Tasks:**
+   - URL: `/tasks/`
+   - View: `TaskListView.as_view()`
+   - Name: `'view_tasks'`
+
+3. **Add Task:**
+   - URL: `/add/`
+   - View: `AddTaskView.as_view()`
+   - Name: `'add_task'`
+
+4. **Edit Task:**
+   - URL: `/edit/<task_id>`
+   - View: `EditTaskView.as_view()`
+   - Name: `'edit'`
+
+5. **Delete Task:**
+   - URL: `/delete/<task_id>`
+   - View: `DeleteTaskView.as_view()`
+   - Name: `'delete'`
+
+### Usage:
+
+- The URLs are used to define the navigation structure of the Task Pro application.
+- They specify which views should be invoked for different user actions, such as viewing tasks, adding tasks, editing tasks, and deleting tasks.
+- These URL patterns are then included in the main `urls.py` file of the Django project to integrate them into the overall project structure.
