@@ -758,6 +758,31 @@ This section defines the URL patterns for user authentication in the Task Pro ap
   - Displays a registration form allowing users to sign up with a username and password.
   - On successful registration, users are redirected to the 'view_tasks' page.
 
+### Members Test
+
+This test case is designed to validate the functionality of the user registration form (`RegisterUserForm`) in the Task Pro application.
+
+#### 1. Test Username Is Required (`test_username_is_required`)
+
+- **Description:**
+  - Verifies that the username field is required.
+  - Creates a form with an empty username and checks if it's considered invalid.
+  - Ensures that the 'username' field is present in the form errors.
+
+#### 2. Test Passwords Must Match (`test_passwords_match_is_required`)
+
+- **Description:**
+  - Validates that passwords are required to match for successful form submission.
+  - Creates a form with mismatched passwords ('password1' and 'password2') and checks for validity.
+  - Ensures that the form is considered invalid.
+
+#### 3. Test Password Must Contain a Number (`test_passwords_number_required`)
+
+- **Description:**
+  - Checks that the password must contain a number for successful form submission.
+  - Creates a form with a password lacking a numeric character.
+  - Verifies that the form is considered invalid.
+
 ### Credits for this code
 
 The code for the login feature was found on the Django Wednesday playlist on youtube.
