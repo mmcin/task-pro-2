@@ -14,7 +14,7 @@ class TaskListViewTest(unittest.TestCase):
     def test_get_home_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
-        
+
         # Manually check the template used
         self.assertIn(
             'index.html', [template.name for template in response.templates])
