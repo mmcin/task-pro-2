@@ -118,7 +118,34 @@ class TaskListViewTest(unittest.TestCase):
         # Clean up any test data as needed
         self.user.delete()
 
+    # ----- Test If Task Can Be Deleted -----
 
-# This guard ensures that the test case is only run when the script is executed
+    def test_delete_task(self):
+        # Create a task before attempting to delete it
+        self.task = Task.objects.create(user=self.user, title='Test Task')
+
+        url = reverse('delete', args=[int(self.task.id)])
+        response = self.client.get(url)
+
+        # Check if the response status code is 200 for the GET request
+        self.assertEqual(response.status_code, 200)
+
+        # Check if the task details are present in the response context
+        self.assertIn('task', response.context)
+
+        # Simulate a POST request to delete the task
+        response = self.client.post(url)
+
+        # Check if the response redirects to the expected URL (you might want to redirect to the task list view after deletion)
+        self.assertEqual(response.status_code, 302)
+
+        redirect_url = reverse('view_tasks')
+        self.assertEqual(response.url, redirect_url)
+
+        # Check if the task has been deleted from the database
+        with self.assertRaises(Task.DoesNotExist):
+            self.task.refresh_from_db()
+
+
 if __name__ == '__main__':
     unittest.main()

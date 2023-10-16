@@ -77,6 +77,8 @@ class EditTaskView(View):
 
         return redirect('view_tasks')
 
+# Delete an item
+
 
 class DeleteTaskView(View):
     template_name = 'delete_task.html'
