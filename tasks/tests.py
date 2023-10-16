@@ -136,7 +136,7 @@ class TaskListViewTest(unittest.TestCase):
         # Simulate a POST request to delete the task
         response = self.client.post(url)
 
-        # Check if the response redirects to the expected URL (you might want to redirect to the task list view after deletion)
+        # Check if the response redirects to the expected URL
         self.assertEqual(response.status_code, 302)
 
         redirect_url = reverse('view_tasks')
