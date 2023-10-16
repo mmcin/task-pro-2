@@ -4,6 +4,10 @@
     border: none;
 }
 
+body {
+    overflow: hidden;
+}
+
 :root {
     /* Color Pallete */
     --primary-text-color: #004080;
