@@ -14,3 +14,4 @@ Welcome to **Task Pro**, your go-to Django application for seamless task managem
 
 5. **Responsive Design:** Task Pro is built with a responsive design, ensuring a seamless experience across various devices. Whether you're accessing it from a desktop, tablet, or smartphone, Task Pro adapts to your screen size for optimal usability.
 
+
