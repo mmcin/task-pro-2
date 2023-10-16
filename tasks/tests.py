@@ -26,7 +26,8 @@ class TaskListViewTest(unittest.TestCase):
         # Create a task id
         self.task_id = 1
 
-    # Check That Anyone Can Access The Home Page
+    # ----- Check That Anyone Can Access The Home Page -----
+
     def test_get_home_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
@@ -34,12 +35,14 @@ class TaskListViewTest(unittest.TestCase):
         self.assertIn(
             'index.html', [template.name for template in response.templates])
 
-    # Check That Logged In Users Can Access The Add Task Views
+    # ----- Check That Logged In Users Can Access The Add Task Views -----
+
     def test_view_access_to_add_when_logged_in(self):
         url = reverse('view_tasks')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
+    # ----- Check That Logged In Users Can Add Tasks -----
     def test_create_task(self):
         url = reverse('add_task')
         # Simulate a POST request to create a task
@@ -59,6 +62,7 @@ class TaskListViewTest(unittest.TestCase):
             Task.objects.filter(title='Test Task', user=self.user).exists())
 
     # Check That Logged In Users Can Access The Edit Task Views
+
     def test_view_access_to_edit_when_logged_in(self):
         # Create a task before attempting to access the 'edit' view
         self.task = Task.objects.create(user=self.user, title='Test Task')
@@ -71,7 +75,8 @@ class TaskListViewTest(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
 
-    # Test if task can be eddited 
+    # ----- Test If Task Can Be Edited -----
+
     def test_edit_task(self):
         task = self.task
         url = reverse('edit', args=[str(self.task.id)])
@@ -94,6 +99,20 @@ class TaskListViewTest(unittest.TestCase):
 
         # Refresh the task from the database
         self.task.refresh_from_db()
+
+    # ----- Check That Logged In Users Can Access The Delete Task Views -----
+
+    def test_view_access_to_delete_when_logged_in(self):
+        # Create a task before attempting to access the 'edit' view
+        self.task = Task.objects.create(user=self.user, title='Test Task')
+
+        url = reverse('delete', args=[int(self.task.id)])
+        response = self.client.get(url)
+
+        # Clean up the created task after the test
+        self.task.delete()
+
+        self.assertEqual(response.status_code, 200)
 
     def tearDown(self):
         # Clean up any test data as needed
