@@ -19,7 +19,7 @@ class TestRegisterUserFormTest(unittest.TestCase):
             {'password2': 'password123'},
             )
         self.assertFalse(form.is_valid())
-  
+
     # test password must container number
     def test_passwords_number_required(self):
         form = RegisterUserForm(
