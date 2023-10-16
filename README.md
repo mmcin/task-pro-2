@@ -787,8 +787,15 @@ This test case is designed to validate the functionality of the user registratio
 
 ### Credits for this code
 
+#### User Registration Form
 The code for the login feature was found on the Django Wednesday playlist on youtube.
 The playlist can be found here: https://www.youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy
 
 Videos :
     - 21 to 26 were used. 
+
+#### Light Dark Theme
+The code for the light and dark theme was found here: https://www.youtube.com/watch?v=wodWDIdV9BY
+
+### Tabbed InterFace For Task Filtering
+The code for the tabbed interface was found here: https://www.youtube.com/watch?v=nlOmgBHnLqQ
