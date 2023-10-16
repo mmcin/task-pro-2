@@ -20,7 +20,8 @@ class RegisterUserForm(UserCreationForm):
     password2 = forms.CharField(
         required=True,
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control', 'placeholder': 'Confirm Password '}),
+            attrs={
+                'class': 'form-control', 'placeholder': 'Confirm Password '}),
         )
 
     class Meta:
